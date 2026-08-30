@@ -3,4 +3,5 @@
     <string name="done">Done</string>
     <string name="hint">Fill your name</string>
     <string name="relative">Relative layout</string>
+    <string name = "back">Back</string>
 </resources>
