@@ -19,21 +19,21 @@
         android:background="@color/design_default_color_primary">
 
         <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtUserName"
+            android:layout_width="300dp"
+            android:layout_height="54dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="200dp"
             android:layout_marginEnd="30dp"
             android:ems="10"
+            android:hint="@string/hint"
             android:inputType="text"
-            android:text="@string/hint"
             android:textColor="@color/white" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtPwd"
+            android:layout_width="296dp"
+            android:layout_height="55dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="300dp"
             android:layout_marginEnd="30dp"
@@ -61,6 +61,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="400dp"
             android:layout_marginEnd="85dp"
+            android:onClick="chuyenTrangChu"
             android:text="Sign In" />
 
         <Button
