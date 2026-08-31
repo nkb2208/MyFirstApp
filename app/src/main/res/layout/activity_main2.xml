@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary_dark"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingTop="20dp"
-    >
+    android:paddingRight="16dp">
 
     <FrameLayout
         android:layout_width="363dp"
@@ -25,6 +25,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="200dp"
             android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/white"
             android:ems="10"
             android:hint="@string/hint"
             android:inputType="text"
@@ -37,7 +38,10 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="300dp"
             android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/white"
             android:ems="10"
+            android:focusable="auto"
+            android:hint="Fill yout password"
             android:inputType="textPassword"
             android:textColor="@color/white" />
 
@@ -72,6 +76,30 @@
             android:layout_marginTop="450dp"
             android:layout_marginEnd="85dp"
             android:text="@string/back" />
+
+        <TextView
+            android:id="@+id/lblUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="85dp"
+            android:labelFor="@id/txtUserName"
+            android:text="User name"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginEnd="85dp"
+            android:labelFor="@id/txtPwd"
+            android:text="Password"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
