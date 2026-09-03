@@ -2,7 +2,9 @@ package com.example.myfirstapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -21,6 +23,7 @@ public class Home_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+        // data
         ArrayList<String> data = new ArrayList<>();
         for(int i = 1; i< 6; i++){
             data.add("item " + i);
@@ -34,6 +37,7 @@ public class Home_Screen extends AppCompatActivity {
         ListView listView = findViewById(R.id.lstItems);
         listView.setAdapter(adapter);
 
+        //Custom view list
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(
                 this,
                 R.layout.activity_my_list_item,
@@ -42,6 +46,19 @@ public class Home_Screen extends AppCompatActivity {
         );
         ListView lstView = findViewById(R.id.lstItem1);
         lstView.setAdapter(adapter1);
+
+        // Inflate
+        // Method 1:
+//        ViewGroup root = (ViewGroup)findViewById(R.id.main);
+//
+//        LayoutInflater inflater = getLayoutInflater();
+//
+//        View childView = inflater.inflate(R.layout.activity_my_list_item,root);
+
+
+        // Method 2:
+//        View childView1 = inflater.inflate(R.layout.activity_my_list_item, null);
+//        root.addView(childView1);
     }
 
     public String removeItem(ArrayList<String> data, int id ){
