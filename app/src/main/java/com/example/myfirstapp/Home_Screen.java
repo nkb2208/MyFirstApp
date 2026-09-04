@@ -24,6 +24,9 @@ public class Home_Screen extends AppCompatActivity {
 
     private ListView listView;
 
+    private Spinner spinner;
+    private LanguageAdapter languageAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +88,14 @@ public class Home_Screen extends AppCompatActivity {
 //        );
 //        spinner.setAdapter(adapter);
 
+        ArrayList<Language> languagesLst = new ArrayList<>();
+        languagesLst.add(new Language("0", "C++", R.drawable.c));
+        languagesLst.add(new Language("1", "Java", R.drawable.java));
+        languagesLst.add(new Language("2", "Python", R.drawable.python));
+
+        spinner = (Spinner) findViewById(R.id.languageLst);
+        languageAdapter = new LanguageAdapter(Home_Screen.this, R.layout.activity_my_list_item, languagesLst);
+        spinner.setAdapter(languageAdapter);
     }
 
     public String removeItem(ArrayList<String> data, int id ){

@@ -34,4 +34,5 @@ public class ItemAdapter extends ArrayAdapter<Car> {
 
         return convertView;
     }
+
 }
