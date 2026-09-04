@@ -107,19 +107,14 @@ public class Home_Screen extends AppCompatActivity {
         languageAdapter = new LanguageAdapter(Home_Screen.this, R.layout.activity_my_list_item, languagesLst);
         spinner.setAdapter(languageAdapter);
 
-
-
-//      Data for Expandable List
-
-
 //      ExpandList
-//        expandableListView = (ExpandableListView) findViewById(R.id.expandLst);
-//
-//        carGrpLst = new ArrayList<>(carItemLst.keySet());
-//        carItemLst  = getList();
-//
-//        CarAdapter adapter = new CarAdapter( carGrpLst , carItemLst);
-//        expandableListView.setAdapter(adapter);
+        expandableListView = (ExpandableListView) findViewById(R.id.expandLst);
+
+        carItemLst  = getList();
+        carGrpLst = new ArrayList<>(carItemLst.keySet());
+
+        CarAdapter adapter = new CarAdapter( carGrpLst , carItemLst);
+        expandableListView.setAdapter(adapter);
     }
 
 
@@ -136,14 +131,14 @@ public class Home_Screen extends AppCompatActivity {
         lstMercedesItems.add(new CarItem(3,"C Class", R.drawable.mercedes));
 
         ArrayList<CarItem> lstBMWItems = new ArrayList<>();
-        lstMercedesItems.add(new CarItem(4,"750i", R.drawable.bmw));
-        lstMercedesItems.add(new CarItem(5,"530i", R.drawable.bmw));
-        lstMercedesItems.add(new CarItem(6,"320i", R.drawable.bmw));
+        lstBMWItems.add(new CarItem(4,"750i", R.drawable.bmw));
+        lstBMWItems.add(new CarItem(5,"530i", R.drawable.bmw));
+        lstBMWItems.add(new CarItem(6,"320i", R.drawable.bmw));
 
         ArrayList<CarItem> lstAudiItems = new ArrayList<>();
-        lstMercedesItems.add(new CarItem(7,"A5", R.drawable.audi));
-        lstMercedesItems.add(new CarItem(8,"A6", R.drawable.audi));
-        lstMercedesItems.add(new CarItem(9,"A7", R.drawable.audi));
+        lstAudiItems.add(new CarItem(7,"A5", R.drawable.audi));
+        lstAudiItems.add(new CarItem(8,"A6", R.drawable.audi));
+        lstAudiItems.add(new CarItem(9,"A7", R.drawable.audi));
 
         listmap.put(groupMercedes, lstMercedesItems);
         listmap.put(groupBMW, lstBMWItems);
