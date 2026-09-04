@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -18,6 +19,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Home_Screen extends AppCompatActivity {
     public static ArrayList<Car> carsLst = new ArrayList<Car>();
@@ -26,6 +29,12 @@ public class Home_Screen extends AppCompatActivity {
 
     private Spinner spinner;
     private LanguageAdapter languageAdapter;
+
+    private ExpandableListView expandableListView;
+
+    private ArrayList<CarGroup> carGrpLst;
+
+    private Map<CarGroup, ArrayList<CarItem>> carItemLst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,9 +102,54 @@ public class Home_Screen extends AppCompatActivity {
         languagesLst.add(new Language("1", "Java", R.drawable.java));
         languagesLst.add(new Language("2", "Python", R.drawable.python));
 
+//      Spinner
         spinner = (Spinner) findViewById(R.id.languageLst);
         languageAdapter = new LanguageAdapter(Home_Screen.this, R.layout.activity_my_list_item, languagesLst);
         spinner.setAdapter(languageAdapter);
+
+
+
+//      Data for Expandable List
+
+
+//      ExpandList
+//        expandableListView = (ExpandableListView) findViewById(R.id.expandLst);
+//
+//        carGrpLst = new ArrayList<>(carItemLst.keySet());
+//        carItemLst  = getList();
+//
+//        CarAdapter adapter = new CarAdapter( carGrpLst , carItemLst);
+//        expandableListView.setAdapter(adapter);
+    }
+
+
+    private Map<CarGroup, ArrayList<CarItem>> getList(){
+        Map<CarGroup, ArrayList<CarItem>> listmap = new HashMap<>();
+
+        CarGroup groupMercedes = new CarGroup(1,"Mercedes",R.drawable.mercedes);
+        CarGroup groupBMW = new CarGroup(2,"BMW",R.drawable.bmw);
+        CarGroup groupAudi = new CarGroup(3,"Audi",R.drawable.audi);
+
+        ArrayList<CarItem> lstMercedesItems = new ArrayList<>();
+        lstMercedesItems.add(new CarItem(1,"A Class", R.drawable.mercedes));
+        lstMercedesItems.add(new CarItem(2,"B Class", R.drawable.mercedes));
+        lstMercedesItems.add(new CarItem(3,"C Class", R.drawable.mercedes));
+
+        ArrayList<CarItem> lstBMWItems = new ArrayList<>();
+        lstMercedesItems.add(new CarItem(4,"750i", R.drawable.bmw));
+        lstMercedesItems.add(new CarItem(5,"530i", R.drawable.bmw));
+        lstMercedesItems.add(new CarItem(6,"320i", R.drawable.bmw));
+
+        ArrayList<CarItem> lstAudiItems = new ArrayList<>();
+        lstMercedesItems.add(new CarItem(7,"A5", R.drawable.audi));
+        lstMercedesItems.add(new CarItem(8,"A6", R.drawable.audi));
+        lstMercedesItems.add(new CarItem(9,"A7", R.drawable.audi));
+
+        listmap.put(groupMercedes, lstMercedesItems);
+        listmap.put(groupBMW, lstBMWItems);
+        listmap.put(groupAudi, lstAudiItems);
+
+        return listmap;
     }
 
     public String removeItem(ArrayList<String> data, int id ){
