@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,6 +70,21 @@ public class Home_Screen extends AppCompatActivity {
         setUpAdapter();
         setUpOnClickListener();
 
+        // Basic Spinner
+//        ArrayList<String> dataProvider = new ArrayList<>();
+//        dataProvider.add("HCMC");
+//        dataProvider.add("Vung Tau");
+//        dataProvider.add("Can Tho");
+//        dataProvider.add("Ha Noi");
+//
+//        Spinner spinner = (Spinner) findViewById(R.id.languageLst);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+//                this,
+//                android.R.layout.simple_list_item_1,
+//                dataProvider
+//        );
+//        spinner.setAdapter(adapter);
+
     }
 
     public String removeItem(ArrayList<String> data, int id ){
@@ -95,7 +111,7 @@ public class Home_Screen extends AppCompatActivity {
     private void setUpAdapter(){
         listView = (ListView) findViewById(R.id.carsListView);
 
-        ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0,carsLst);
+        ItemAdapter adapter = new ItemAdapter(Home_Screen.this, 0,carsLst);
 
         listView.setAdapter(adapter);
     }
@@ -106,7 +122,7 @@ public class Home_Screen extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Car selectedCar = (Car) (listView.getItemAtPosition(i));
                 Intent thuChuyenDetail;
-                thuChuyenDetail = new Intent(getApplicationContext(), ItemInfor.class);
+                thuChuyenDetail = new Intent(Home_Screen.this, ItemInfor.class);
                 thuChuyenDetail.putExtra("id",selectedCar.getId());
                 startActivity(thuChuyenDetail);
             }

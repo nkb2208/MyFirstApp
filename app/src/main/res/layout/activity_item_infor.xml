@@ -41,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:onClick="chuyenMHHome"
         android:text="@string/back"
         app:layout_constraintBottom_toTopOf="@+id/carImageInfo"
         app:layout_constraintStart_toStartOf="parent"

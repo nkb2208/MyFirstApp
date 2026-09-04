@@ -20,13 +20,24 @@
 
     <ListView
         android:id="@+id/carsListView"
-        android:layout_width="366dp"
-        android:layout_height="791dp"
+        android:layout_width="377dp"
+        android:layout_height="326dp"
         android:layout_marginStart="82dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="82dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Spinner
+        android:id="@+id/languageLst"
+        android:layout_width="389dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="82dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carsListView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

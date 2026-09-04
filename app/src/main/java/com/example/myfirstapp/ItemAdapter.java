@@ -24,7 +24,6 @@ public class ItemAdapter extends ArrayAdapter<Car> {
         Car car = getItem(position);
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_my_list_item, parent,false);
-
         }
 
         TextView tv = (TextView) convertView.findViewById(R.id.carName);

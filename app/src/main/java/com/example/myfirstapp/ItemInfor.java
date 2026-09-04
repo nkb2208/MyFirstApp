@@ -24,7 +24,9 @@ public class ItemInfor extends AppCompatActivity {
     }
 
     public void chuyenMHHome(View v){
-        startActivity(new Intent(ItemInfor.this, Home_Screen.class));
+        Intent thuChuyenMHHome;
+        thuChuyenMHHome = new Intent(ItemInfor.this, Home_Screen.class);
+        startActivity(thuChuyenMHHome);
     }
 
     private void getSelectedCar(){
